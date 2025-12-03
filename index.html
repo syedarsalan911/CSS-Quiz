@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Quiz - Arsalan</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+ <div class="main-class-container">
+        <main class="container">
+            <div id="loginSection" class="card">
+                <h1>CSS Quiz Challenge</h1> 
+                <p class="muted-text">Created by Syed Arsalan</p>
+
+                <input id="nameInput" type="text" placeholder="Type your name" autocomplete="off" />
+                <button id="startQuiz" class="msg-aria-live-polite">Start Quiz</button>
+                <p id="loginMsg" class="msg-aria-live-polite"></p>
+
+                <hr>
+
+                <div class="muted-text">
+                    <p>Admin Info (for admin use only):</p>
+                    <input type="text" placeholder="03XXXXXXXXX" value="0333-2110172" readonly />
+                    <small class="muted-text">*For admin use only/Whatsapp</small>
+                    <input type="email" placeholder="rameeltanveer19@gmail.com" value="arsalanalihashmi7@gmail.com" readonly />
+                    <small class="muted-text">*For admin use only/Email</small>
+                </div>
+            </div>
+
+            <section id="quizApp" class="card hidden" aria-hidden="true">
+                <div class="quiz-header">
+                    <div class="quiz-progress">
+                        <span id="progressText">Question 0 / 0</span>
+                        <span id="topicBadge" class="badge">Topic</span>
+                    </div>
+                    <div class="right-timers">
+                        <span class="timer">Total Time: <strong id="globalTimer">00:00</strong></span>
+                        <span class="timer">Time per Q: <strong id="qTimer">00:00</strong></span>
+                    </div>
+                </div>
+
+                <div class="quiz-content">
+                    <h2 id="questionText">Question will appear here</h2>
+                    <div id="optionsList" class="options-list aria-live-polite">
+                        </div>
+                    <div class="navigation">
+                        <button id="prevBtn" class="btn disabled" disabled>Previous</button>
+                        <button id="nextBtn" class="btn disabled" disabled>Next</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <div id="fireworksContainer" class="fireworks hidden" aria-hidden="true"></div>
+
+        <div id="resultModal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+            <div class="modal-card">
+                <h2 id="modalTitle">Result</h2>
+                <div class="modal-body">
+                    <span id="modalEmoji" class="emoji">🎉</span>
+                    <p id="modalMessage">Modal message: You scored XX%</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="modalClose" class="btn primary">Close</button>
+                    <button id="modalDetails" class="btn secondary">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <audio id="fireworksAudio" src="fireworks-10-419029.mp3" loop></audio>
+
+        <footer>
+            <p class="muted-text">Designed by <a href="arsalanalihashmi7@gmail.com"><strong>Arsalan</strong></a> | &copy; 2025 All rights reserved.</p>
+        </footer>
+    </div>
+
+<script src="./app.js"></script>
+</body>
+</html>
