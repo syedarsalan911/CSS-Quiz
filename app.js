@@ -1,3 +1,4 @@
+
 /* script.js — FINAL CODE WITH ALL FIXES AND CELEBRATION TIMING */
 
 /* ---------- CONFIG ---------- */
@@ -5,13 +6,14 @@ const TOTAL_MINUTES = 40;
 const PER_QUESTION_SECONDS = 40;
 const TOTAL_SECONDS = TOTAL_MINUTES * 60;
 const FIXED_WHATSAPP = '0333-2110172';
-const FIXED_EMAIL = 'arsalanalihashmi7@gmail.com';
+const FIXED_EMAIL = 'arsalanalihahsmi7@gmail.com';
 
 // FIX: Testing Mode OFF (Agar aap chahte hain ke koi bhi baar baar quiz de sake, toh ise 'true' kar dein)
 const IS_TESTING_MODE = false;
 
 /* ---------- QUESTION BANK (40+ items) ---------- */
 const BANK = [
+    
     { q: "Which CSS property sets text color?", a: "color", o: ["font-color", "text-color", "color", "foreground"], topic: "Colors" },
     { q: "Which HEX code represents black?", a: "#000000", o: ["#FFFFFF", "#000000", "#FF0000", "#00FF00"], topic: "Colors" },
     { q: "How to prevent background image repeating?", a: "background-repeat: no-repeat;", o: ["background-repeat: repeat-x;", "background-repeat: no-repeat;", "background-attach: fixed;", "repeat: none;"], topic: "Colors" },
@@ -52,9 +54,7 @@ const BANK = [
     { q: "What does box-sizing:border-box do?", a: "includes padding in width", o: ["excludes padding", "includes padding in width", "collapses margin", "adds border outside"], topic: "Misc" },
     { q: "Which selects class in CSS?", a: ".classname", o: ["#classname", ".classname", "classname", "*classname"], topic: "Misc" },
     { q: "Which property centers inline text?", a: "text-align", o: ["align", "text-align", "center-inline", "inline-align"], topic: "Misc" },
-    { q: "Are you understand Eshu?", a: "Yes", o: ["Yes", "No"], topic: "Misc" }
 ];
-
 
 /* ---------- STATE ---------- */
 let userName = null;
@@ -289,8 +289,8 @@ function finishQuiz() {
     if (percent >= 90) {
         // VIP
         showResultModal({
-            title: "👑 VIP فتح! / VIP Victory!",
-            message: `زبردست! آپ نے ${percent}% حاصل کیے — VIP Celebration! / Amazing! You scored ${percent}% — VIP Celebration!`,
+            title: "VIP Victory!👑",
+            message: ` ${percent}% VIP Celebration! / Amazing! You scored ${percent}% — VIP Celebration!`,
             emoji: "👑",
             type: "vip"
         });
@@ -299,8 +299,8 @@ function finishQuiz() {
     } else if (percent >= 70) {
         // Normal celebration
         showResultModal({
-            title: "🎉 مبارک ہو! / Congratulations!",
-            message: `آپ نے ${percent}% حاصل کیے — شاندار کارکردگی! / You scored ${percent}% — Excellent Performance!`,
+            title: "Congratulation Eshal!🎉",
+            message: ` ${percent}% You scored ${percent}% — Excellent Performance!`,
             emoji: "🎊",
             type: "success"
         });
@@ -310,8 +310,8 @@ function finishQuiz() {
     } else {
         // Better luck
         showResultModal({
-            title: "😌 کوشش جاری رکھیں / Keep Trying",
-            message: `آپ نے ${percent}% حاصل کیے۔ کوشش کریں، آپ بہتر کریں گے! / You scored ${percent}%. Keep trying, you can do better!`,
+            title: "No prob Eshu😌 Keep Trying ",
+            message: ` ${percent}%You scored ${percent}%. Keep trying, you can do better!`,
             emoji: "✨",
             type: "soft"
         });
@@ -322,7 +322,7 @@ function finishQuiz() {
 
 /* ---------- MODAL (animated result) ---------- */
 function showResultModal({ title, message, emoji, type }) {
-    modalTitle.textContent = title || "نتیجہ / Result";
+    modalTitle.textContent = title || "Result";
     modalMessage.textContent = message || "";
     modalEmoji.textContent = emoji || "🎉";
     modalMessage.classList.remove('good', 'bad');
