@@ -1,14 +1,14 @@
  @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
 
         :root {
-            --color-primary: #3b82f6;
+            --color-primary: #00358a;
             --color-secondary: #f97316;
-            --color-success: #10b981;
+            --color-success: #ffdd47;
             --color-warning: #f59e0b;
             --color-error: #ef4444;
             --color-muted: #9ca3af;
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
+            --bg-dark: #003d3d;
+            --bg-card: #111824;
             --text-light: #f8fafc;
         }
 
