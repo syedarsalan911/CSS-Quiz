@@ -52,7 +52,7 @@ const BANK = [
     { q: "What does box-sizing:border-box do?", a: "includes padding in width", o: ["excludes padding", "includes padding in width", "collapses margin", "adds border outside"], topic: "Misc" },
     { q: "Which selects class in CSS?", a: ".classname", o: ["#classname", ".classname", "classname", "*classname"], topic: "Misc" },
     { q: "Which property centers inline text?", a: "text-align", o: ["align", "text-align", "center-inline", "inline-align"], topic: "Misc" },
-{ q: "Are you understand Eshu?", a: "Yes", o: ["Yes", "No"], topic: "Misc" }
+    { q: "Are you understand Eshu?", a: "Yes", o: ["Yes", "No"], topic: "Misc" }
 ];
 
 
@@ -106,12 +106,12 @@ startQuizBtn.addEventListener('click', () => {
     loginMsg.textContent = "";
 
     if (!val) {
-        loginMsg.textContent = " Please enter your name ";
+        loginMsg.textContent = "براہِ کرم اپنا نام لکھیں / Please enter your name";
         return;
     }
 
     if (!canAttempt(val)) {
-        loginMsg.textContent = "This name has already been used on this device";
+        loginMsg.textContent = "اس نام سے اس ڈیوائس پر پہلے ہی کوئز حل کیا جا چکا ہے / This name has already been used on this device";
         return;
     }
 
@@ -189,7 +189,7 @@ function loadQuestion() {
     nextBtn.disabled = true;
     const item = questions[current];
     progressText.innerHTML = `<span>Question ${current + 1} / ${questions.length}</span> 
-                                  <span style="font-family: 'Noto Nastaliq Urdu', serif;"> |  ${current + 1} / ${questions.length}</span>`;
+                                  <span style="font-family: 'Noto Nastaliq Urdu', serif;"> | سوال ${current + 1} / ${questions.length}</span>`;
     topicBadge.textContent = item.topic;
     questionText.textContent = item.q;
     const opts = shuffle(item.o.slice());
@@ -275,9 +275,9 @@ function finishQuiz() {
             </head>
             <body>
               <div class="box">
-                <h1> — ${escapeHtml(userName)}</h1>
-                <p>: ${total}</p>
-                <p>: ${correct} &nbsp; | &nbsp; : ${wrong}</p>
+                <h1>نتیجہ — ${escapeHtml(userName)}</h1>
+                <p>کل سوالات: ${total}</p>
+                <p>صحیح: ${correct} &nbsp; | &nbsp; غلط: ${wrong}</p>
                 <p class="percent">٪ ${percent}</p>
               </div>
             </body>
@@ -289,8 +289,8 @@ function finishQuiz() {
     if (percent >= 90) {
         // VIP
         showResultModal({
-            title: " VIP / Victory!👑",
-            message: ` ${percent}% VIP Celebration! / Amazing! You scored ${percent}% — VIP Celebration!`,
+            title: "👑 VIP فتح! / VIP Victory!",
+            message: `زبردست! آپ نے ${percent}% حاصل کیے — VIP Celebration! / Amazing! You scored ${percent}% — VIP Celebration!`,
             emoji: "👑",
             type: "vip"
         });
@@ -299,8 +299,8 @@ function finishQuiz() {
     } else if (percent >= 70) {
         // Normal celebration
         showResultModal({
-            title: "Congratulations!🎉",
-            message: `${percent}% ! / You scored ${percent}% — Excellent Performance!`,
+            title: "🎉 مبارک ہو! / Congratulations!",
+            message: `آپ نے ${percent}% حاصل کیے — شاندار کارکردگی! / You scored ${percent}% — Excellent Performance!`,
             emoji: "🎊",
             type: "success"
         });
@@ -310,8 +310,8 @@ function finishQuiz() {
     } else {
         // Better luck
         showResultModal({
-            title: "Keep Trying😌",
-            message: ` ${percent}%You scored ${percent}%. Keep trying, you can do better!`,
+            title: "😌 کوشش جاری رکھیں / Keep Trying",
+            message: `آپ نے ${percent}% حاصل کیے۔ کوشش کریں، آپ بہتر کریں گے! / You scored ${percent}%. Keep trying, you can do better!`,
             emoji: "✨",
             type: "soft"
         });
@@ -322,7 +322,7 @@ function finishQuiz() {
 
 /* ---------- MODAL (animated result) ---------- */
 function showResultModal({ title, message, emoji, type }) {
-    modalTitle.textContent = title || " Result";
+    modalTitle.textContent = title || "نتیجہ / Result";
     modalMessage.textContent = message || "";
     modalEmoji.textContent = emoji || "🎉";
     modalMessage.classList.remove('good', 'bad');
